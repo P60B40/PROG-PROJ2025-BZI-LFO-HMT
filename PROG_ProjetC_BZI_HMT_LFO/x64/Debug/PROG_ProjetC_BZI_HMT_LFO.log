@@ -1,0 +1,3 @@
+﻿  main.c
+C:\LFO\GIT_PROG\PROG_SLO1_24_25\Projets\Exercices\Autre Main (Pas toucher!)\main.c(32,13): warning C4013: 'strcmp' non défini(e) ; extern retournant int pris par défaut
+  PROG_ProjetC_BZI_HMT_LFO.vcxproj -> C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG_ProjetC_BZI_HMT_LFO\x64\Debug\PROG_ProjetC_BZI_HMT_LFO.exe

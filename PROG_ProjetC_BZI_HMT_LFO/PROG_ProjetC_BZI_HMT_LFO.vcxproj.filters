@@ -15,12 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\GIT_PROG\PROG_SLO1_24_25\Projets\Exercices\Autre Main (Pas toucher!)\main.c">
+    <ClCompile Include="GestionNotes.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="GestionAffichage.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\GIT_PROG\PROG_SLO1_24_25\Projets\Exercices\Autre Main (Pas toucher!)\main.h">
+    <ClInclude Include="GestionNotes.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="GestionAffichage.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

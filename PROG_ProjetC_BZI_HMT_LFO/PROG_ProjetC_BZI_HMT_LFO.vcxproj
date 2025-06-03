@@ -127,10 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\GIT_PROG\PROG_SLO1_24_25\Projets\Exercices\Autre Main (Pas toucher!)\main.c" />
+    <ClCompile Include="GestionAffichage.c" />
+    <ClCompile Include="GestionNotes.c" />
+    <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\GIT_PROG\PROG_SLO1_24_25\Projets\Exercices\Autre Main (Pas toucher!)\main.h" />
+    <ClInclude Include="GestionAffichage.h" />
+    <ClInclude Include="GestionNotes.h" />
+    <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

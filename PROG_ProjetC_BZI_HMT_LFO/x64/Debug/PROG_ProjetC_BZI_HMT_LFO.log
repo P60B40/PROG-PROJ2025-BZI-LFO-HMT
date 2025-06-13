@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+﻿  main.c
+C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\main.c(450,9): warning C4033: 'afficherTableauDansFichier' doit retourner une valeur
+C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\main.c(511,9): warning C4101: 'k' : variable locale non référencée
+C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\main.c(424): warning C4716: 'supprimerNote' : doit retourner une valeur
+C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\main.c(396): warning C4716: 'modifierNote' : doit retourner une valeur
+C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\main.c(364): warning C4716: 'ajouterNote' : doit retourner une valeur
+C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\main.c(506): warning C4716: 'afficherTableauDansFichier' : doit retourner une valeur
+C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\main.c(298): warning C4715: 'initialiserSysteme' : les chemins de contrôle ne retournent pas tous une valeur
+  PROG_ProjetC_BZI_HMT_LFO.vcxproj -> C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\x64\Debug\PROG_ProjetC_BZI_HMT_LFO.exe
+=======
 ﻿  GestionAffichage.c
 C:\B_Z dossier\Prog\Projet2025\PROG_ProjetC_BZI_HMT_LFO\GestionAffichage.c(5,10): fatal error C1083: Impossible d'ouvrir le fichier include : 'Header.h' : No such file or directory
   main.c
@@ -30,3 +41,4 @@ C:\B_Z dossier\Prog\Projet2025\PROG_ProjetC_BZI_HMT_LFO\main.c(289,27): error C2
 C:\B_Z dossier\Prog\Projet2025\PROG_ProjetC_BZI_HMT_LFO\main.c(289,42): error C2059: erreur de syntaxe : 'type'
 C:\B_Z dossier\Prog\Projet2025\PROG_ProjetC_BZI_HMT_LFO\main.c(289,101): error C2059: erreur de syntaxe : ')'
   Génération de code en cours...
+>>>>>>> 1ade81f975350998c8359e95746a317b95f9be77

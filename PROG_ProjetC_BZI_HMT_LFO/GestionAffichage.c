@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include "Header.h"
+#include "GestionAffichage.h"
 
 // fonction pour ajouter des notes
 void ajouterNote() {

@@ -1,5 +1,5 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef GESTIONAFFICHAGE_H
+#define GESTIONAFFICHAGE_H
 
 #include <stdio.h>  // nécessaire pour FILE *
 //define 

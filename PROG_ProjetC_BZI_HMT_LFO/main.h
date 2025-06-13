@@ -42,13 +42,13 @@ typedef struct {
 } Note;
 
 typedef struct {
-    char nom[TAILLE_NOM_BRANCHE];
+    char nom_branche[TAILLE_NOM_BRANCHE];
     Note* notes;
     int nb_notes;
 } Branch;
 
 typedef struct {
-    char nom[TAILLE_NOM_MODULE];
+    char nom_module[TAILLE_NOM_MODULE];
     Branch* branches;
     int nb_branches;
 } Module;

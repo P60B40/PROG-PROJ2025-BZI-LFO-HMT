@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.30-10" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="pr94rsb" created="2025-06-13" changedby="pr94rsb" changed="2025-06-13" origin="Structorizer 3.30-10 / C99Parser: &#34;C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\main.c&#34;" text="&#34;int initialiserSysteme(Systeme * s)&#34;" comment="" color="ffffff" type="sub" style="nice">
+	<children>
+		<instruction text="&#34;OUTPUT &#34;&#34;Nombre de modules : &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;INPUT s-&#62;nb_modules&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;s-&#62;modules &#60;- calloc(s-&#62;nb_modules, sizeof(Module))&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<alternative text="&#34; not s-&#62;modules&#34;" comment="" color="ffff80" disabled="0">
+			<qTrue>
+				<instruction text="&#34;perror(&#34;&#34;\nErreur alloc modules&#34;&#34;)&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<jump text="&#34;return 1&#34;" comment="" color="ffffff" disabled="0"></jump>
+			</qTrue>
+			<qFalse color="ff8080">
+			</qFalse>
+		</alternative>
+		<for text="&#34;for IndiceModules &#60;- 0 to s-&#62;nb_modules - 1&#34;" comment="" counterVar="IndiceModules" startValue="0" endValue="s-&#62;nb_modules - 1" stepConst="1" style="COUNTER" color="80ffff" disabled="0">
+			<qFor>
+				<instruction text="&#34;OUTPUT &#34;&#34;\nNom du module &#34;&#34;, IndiceModules + 1, &#34;&#34; : &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;INPUT s-&#62;modules[IndiceModules].nom_module&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;OUTPUT &#34;&#34;\nNombre de branches pour &#34;&#34;, s-&#62;modules[IndiceModules].nom_module, &#34;&#34; : &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;INPUT s-&#62;modules[IndiceModules].nb_branches&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;s-&#62;modules[IndiceModules].branches &#60;- malloc(s-&#62;modules[IndiceModules].nb_branches * sizeof(Branch))&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<alternative text="&#34; not s-&#62;modules[IndiceModules].branches&#34;" comment="" color="ffff80" disabled="0">
+					<qTrue>
+						<instruction text="&#34;perror(&#34;&#34;\nErreur alloc Branches&#34;&#34;)&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+						<jump text="&#34;return 1&#34;" comment="" color="ffffff" disabled="0"></jump>
+					</qTrue>
+					<qFalse color="ff8080">
+					</qFalse>
+				</alternative>
+				<for text="&#34;for IndiceBranches &#60;- 0 to s-&#62;modules[IndiceModules].nb_branches - 1&#34;" comment="" counterVar="IndiceBranches" startValue="0" endValue="s-&#62;modules[IndiceModules].nb_branches - 1" stepConst="1" style="COUNTER" color="80ffff" disabled="0">
+					<qFor>
+						<instruction text="&#34;OUTPUT &#34;&#34;\nNom de la branche &#34;&#34;, IndiceBranches + 1, &#34;&#34; du module &#34;&#34;, s-&#62;modules[IndiceModules].nom_module, &#34;&#34; : &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+						<instruction text="&#34;INPUT s-&#62;modules[IndiceModules].branches[IndiceBranches].nom_branche&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+						<instruction text="&#34;OUTPUT &#34;&#34;\nNombre de notes pour la branche &#34;&#34;, s-&#62;modules[IndiceModules].branches[IndiceBranches].nom_branche, &#34;&#34; : &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+						<instruction text="&#34;INPUT s-&#62;modules[IndiceModules].branches[IndiceBranches].nb_notes&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+						<instruction text="&#34;s-&#62;modules[IndiceModules].branches[IndiceBranches].notes &#60;- malloc(s-&#62;modules[IndiceModules].branches[IndiceBranches].nb_notes * sizeof(Note))&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+						<alternative text="&#34; not s-&#62;modules[IndiceModules].branches[IndiceBranches].notes&#34;" comment="" color="ffff80" disabled="0">
+							<qTrue>
+								<instruction text="&#34;perror(&#34;&#34;\nErreur alloc notes&#34;&#34;)&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<jump text="&#34;return 1&#34;" comment="" color="ffffff" disabled="0"></jump>
+							</qTrue>
+							<qFalse color="ff8080">
+							</qFalse>
+						</alternative>
+						<for text="&#34;for IndiceNotes &#60;- 0 to s-&#62;modules[IndiceModules].branches[IndiceBranches].nb_notes - 1&#34;" comment="" counterVar="IndiceNotes" startValue="0" endValue="s-&#62;modules[IndiceModules].branches[IndiceBranches].nb_notes - 1" stepConst="1" style="COUNTER" color="80ffff" disabled="0">
+							<qFor>
+								<instruction text="&#34;OUTPUT &#34;&#34;\nNom de la note &#34;&#34;, IndiceNotes + 1, &#34;&#34; de la branche &#34;&#34;, s-&#62;modules[IndiceModules].branches[IndiceBranches].nom_branche, &#34;&#34; appartenant au module &#34;&#34;, s-&#62;modules[IndiceModules].nom_module, &#34;&#34; : &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<instruction text="&#34;INPUT s-&#62;modules[IndiceModules].branches[IndiceBranches].notes[IndiceNotes].nom&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+								<instruction text="&#34;OUTPUT &#34;&#34;\nNom donnee a la note &#34;&#34;, IndiceNotes + 1, &#34;&#34; de la branche &#34;&#34;, s-&#62;modules[IndiceModules].branches[IndiceBranches].nom_branche, &#34;&#34; appartenant au module &#34;&#34;, s-&#62;modules[IndiceModules].nom_module, &#34;&#34; est &#34;&#34;, s-&#62;modules[IndiceModules].branches[IndiceBranches].notes[IndiceNotes].nom, &#34;&#34;:&#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qFor>
+						</for>
+						<instruction text="&#34;OUTPUT &#34;&#34;\nNom donnee a la branche &#34;&#34;, IndiceBranches + 1, &#34;&#34; du module &#34;&#34;, s-&#62;modules[IndiceModules].nom_module, &#34;&#34; : &#34;&#34;, s-&#62;modules[IndiceModules].branches[IndiceBranches].nom_branche, &#34;&#34; &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;OUTPUT &#34;&#34;\nNom donnee au module &#34;&#34;, IndiceModules + 1, &#34;&#34; : &#34;&#34;, s-&#62;modules[IndiceModules].nom_module, &#34;&#34; &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qFor>
+		</for>
+		<jump text="&#34;return 0&#34;" comment="" color="ffffff" disabled="0"></jump>
+	</children>
+</root>

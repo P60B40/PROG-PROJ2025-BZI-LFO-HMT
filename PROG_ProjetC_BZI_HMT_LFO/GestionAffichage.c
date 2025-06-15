@@ -8,6 +8,7 @@
 void ajouterNoteDeFichier() {
     FILE* fichier;
     fichier  = fopen(FILE_NAME, "a"); // ouverture du fichier mode : Ouvre un fichier pour ajouter des données à la fin. Si le fichier n'existe pas, il est créé.
+
     //déclaration de variable local
     char module;
     char branche[50];
@@ -52,7 +53,6 @@ void chargerDonnees(Systeme* s) {
         float note;
 
         if (sscanf(ligne, "%7s;%49[^;];%f", &module, branche, &note) == 3) {
-            
             // Chercher module
             for (i = 0; i < s->nb_modules; i++) {
                 if (!strcmp(s->modules[i].nom_module, module))
@@ -98,6 +98,7 @@ void afficherTableau(Systeme* s) {
 
         // Afficher notes par ligne
         for ( j = 0; j < s->modules[i].nb_branches; j++) {
+
             if (s->modules[i].branches[j].nb_notes > max_notes)
                 max_notes = s->modules[i].branches[j].nb_notes;
         }
@@ -138,6 +139,7 @@ void afficherTableauFichier(Systeme* s, FILE* f) {
 
         // Affichage des notes par ligne
         for ( j = 0; j < s->modules[i].nb_branches; j++) {
+
             if (s->modules[i].branches[j].nb_notes > max_notes)
                 max_notes = s->modules[i].branches[j].nb_notes;
         }

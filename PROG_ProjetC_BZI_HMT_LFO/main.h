@@ -24,14 +24,41 @@
 #define MAIN_H
 
 //--- librairie standart ---//
-#include <stdio.h>	// pour usage printf et scanf_s
-                    // Nouveauté du VC++ 2005, 2008, 2010 et 2015 : le scanf_s remplace scanf
-#include <stdlib.h>
-#include <conio.h>
 
+
+#define NOM_TAILLE 20
+#define TAILLE_NOM_MODULE 7
+#define TAILLE_NOM_BRANCHE 4
+#define VALEUR_VIDE -1.0
+#define CASE_LARGEUR 25
 
 #define CLEAR system("cls"),resultat = 0 // Effacer l'écran et reset resultat
 
-float *ptrGbl;           //pointeur globale
+#pragma warning(disable : 4996)
+
+typedef struct {
+    char nom[NOM_TAILLE];
+    float valeur;
+} Note;
+
+typedef struct {
+    char nom_branche[TAILLE_NOM_BRANCHE];
+    Note* notes;
+    int nb_notes;
+} Branch;
+
+typedef struct {
+    char nom_module[TAILLE_NOM_MODULE];
+    Branch* branches;
+    int nb_branches;
+} Module;
+
+typedef struct {
+    Module* modules;
+    int nb_modules;
+} Systeme;
+
+int initialiserSysteme(Systeme* s);
+void libererSysteme(Systeme* s);
 
 #endif

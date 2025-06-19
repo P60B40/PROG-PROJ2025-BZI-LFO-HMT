@@ -1,3 +1,9 @@
 ﻿  GestionAffichage.c
+  GestionNotes.c
+  main.c
+C:\B_Z dossier\Prog\Projet2025\PROG_ProjetC_BZI_HMT_LFO\main.c(89,9): warning C4101: 'k' : variable locale non référencée
+C:\B_Z dossier\Prog\Projet2025\PROG_ProjetC_BZI_HMT_LFO\main.c(141,13): warning C4013: 'afficherSysteme' non défini(e) ; extern retournant int pris par défaut
+C:\B_Z dossier\Prog\Projet2025\PROG_ProjetC_BZI_HMT_LFO\main.c(160,53): warning C4133: 'fonction' : types incompatibles - de 'char [20]' à 'FILE *'
+  Génération de code en cours...
 main.obj : error LNK2019: symbole externe non résolu afficherSysteme référencé dans la fonction main
-C:\LFO\PROG_ProjetC_BZI_HMT_LFO\PROG-PROJ2025-BZI-LFO-HMT\PROG_ProjetC_BZI_HMT_LFO\x64\Debug\PROG_ProjetC_BZI_HMT_LFO.exe : fatal error LNK1120: 1 externes non résolus
+C:\B_Z dossier\Prog\Projet2025\PROG_ProjetC_BZI_HMT_LFO\x64\Debug\PROG_ProjetC_BZI_HMT_LFO.exe : fatal error LNK1120: 1 externes non résolus

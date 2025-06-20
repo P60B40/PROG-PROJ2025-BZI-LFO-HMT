@@ -8,7 +8,6 @@
 void ajouterNoteDeFichier() {
     FILE* fichier;
     fichier  = fopen(FILE_NAME, "a"); // ouverture du fichier mode : Ouvre un fichier pour ajouter des données à la fin. Si le fichier n'existe pas, il est créé.
-
     //déclaration de variable local
     char module;
     char branche[50];
@@ -53,6 +52,7 @@ void chargerDonnees(Systeme* s) {
         float note;
 
         if (sscanf(ligne, "%7s;%49[^;];%f", &module, branche, &note) == 3) {
+            
             // Chercher module
             for (i = 0; i < s->nb_modules; i++) {
                 if (!strcmp(s->modules[i].nom_module, module))
@@ -85,30 +85,28 @@ void afficherTableau(Systeme* s) {
     int l = 0;
     int max_notes = 0;
     for ( i = 0; i < s->nb_modules; i++) {
-        printf("--------------------------------------------------------------------------------\n");
-        printf("|-- Module %c\n", (char)s->modules[i].nom_module);
+        printf("\n--------------------------------------------------------------------------------\n");
+        printf("|-- Module %s\n", s->modules[i].nom_module);
         printf("--------------------------------------------------------------------------------\n");
 
         // Afficher noms des branches
-        printf("|");
+        printf("||");
         for ( j = 0; j < s->modules[i].nb_branches; j++) {
-            printf("  %-20s |", s->modules[i].branches[j].nom_branche);
+            printf("  %-4s  ||", s->modules[i].branches[j].nom_branche);
         }
         printf("\n--------------------------------------------------------------------------------\n");
 
         // Afficher notes par ligne
         for ( j = 0; j < s->modules[i].nb_branches; j++) {
-
             if (s->modules[i].branches[j].nb_notes > max_notes)
                 max_notes = s->modules[i].branches[j].nb_notes;
         }
 
         for ( l = 0; l < max_notes; l++) {
-            printf("|");
+            printf("|--|");
             for ( j = 0; j < s->modules[i].nb_branches; j++) {
                 if (l < s->modules[i].branches[j].nb_notes) {
-                    printf("------------");
-                    printf("  Note: %.2f|", s->modules[i].branches[j].notes[l].valeur);
+                    printf("  %-s : %1.1f  |--|", s->modules[i].branches[j].notes[l].nom, s->modules[i].branches[j].notes[l].valeur);
                 }
                 else
                     printf("                |");
@@ -127,29 +125,27 @@ void afficherTableauFichier(Systeme* s, FILE* f) {
     int max_notes = 0;
     for ( i = 0; i < s->nb_modules; i++) {
         fprintf(f, "--------------------------------------------------------------------------------\n");
-        fprintf(f, "|-- Module %c\n", (char)s->modules[i].nom_module);
+        fprintf(f, "|-- Module %s\n", s->modules[i].nom_module);
         fprintf(f, "--------------------------------------------------------------------------------\n");
 
         // Affichage des noms des branches
-        fprintf(f, "|");
+        fprintf(f, "||");
         for ( j = 0; j < s->modules[i].nb_branches; j++) {
-            fprintf(f, "  %-20s |", s->modules[i].branches[j].nom_branche);
+            fprintf(f, "  %-4s  ||", s->modules[i].branches[j].nom_branche);
         }
         fprintf(f, "\n--------------------------------------------------------------------------------\n");
 
         // Affichage des notes par ligne
         for ( j = 0; j < s->modules[i].nb_branches; j++) {
-
             if (s->modules[i].branches[j].nb_notes > max_notes)
                 max_notes = s->modules[i].branches[j].nb_notes;
         }
 
         for ( l = 0; l < max_notes; l++) {
-            fprintf(f, "|");
+            fprintf(f, "|--|");
             for ( j = 0; j < s->modules[i].nb_branches; j++) {
                 if (l < s->modules[i].branches[j].nb_notes) {
-                    fprintf(f, "------------");
-                    fprintf(f, "  Note: %.2f|", s->modules[i].branches[j].notes[l].valeur);
+                    fprintf(f, "  %-s : %1.1f  |--|", s->modules[i].branches[j].notes[l].nom, s->modules[i].branches[j].notes[l].valeur);
                 }
                 else
                     fprintf(f, "                |");

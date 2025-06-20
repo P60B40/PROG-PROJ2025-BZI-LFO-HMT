@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdio.h>
+#include <ctype.h>
 
 
 Module* trouverModule(Systeme* s, const char* ptrNom_module) {
@@ -24,8 +25,9 @@ Branch* trouverBranche(Module* m, const char* ptrNom_branche) {
 
 int ajouterNote(Systeme* s, const char* ptrNom_module, const char* ptrNom_branche, const char* ptrNom_note, float valeur) {
     int i;
-    uint8_t note_utiliser = 0;
-    uint8_t note_ajouter = 0;
+    int j;
+    int note_utiliser = 0;//
+    int note_ajouter = 0;//
 
     Module* ptrm= trouverModule(s, ptrNom_module);
     Branch* ptrb = trouverBranche(ptrm, ptrNom_branche);
@@ -46,15 +48,21 @@ int ajouterNote(Systeme* s, const char* ptrNom_module, const char* ptrNom_branch
     else {
         for (i = 0; i < ptrb->nb_notes; i++) {
             if (strcmp(ptrb->notes[i].nom, ptrNom_note) == 0) {
-                printf("Nom de note déjà utilisé\n");
-                note_utiliser = 1;
+                //char reponse[3] = { 0 };
+               // printf("Nom de note deja utilisee\nvoulez vous ecrasez l'ancienne valeur ?\noui/non : ");
+                //scanf(" %3s", &reponse);
+                //getchar();
+                //for (j = 0; j < 3; j++) {reponse[j] = toupper(reponse[j]);}//convertire en majuscule les caractères
+               // if(strcmp( "OUI", reponse) == 1)//si user à choisit autre chose que OUI
+                printf("Nom de note deja utilisee");
+                    note_utiliser = 1;
             }
         }
     }
 
     if (note_utiliser == 0) {
         for (i = 0; i < ptrb->nb_notes; i++) {
-            if (ptrb->notes[i].valeur == VALEUR_VIDE && note_ajouter == 0) {
+            if ((ptrb->notes[i].valeur == 0.0)&&(note_ajouter == 0)) {
                 strcpy(ptrb->notes[i].nom, ptrNom_note);
                 ptrb->notes[i].valeur = valeur;
                 printf("Note ajoutée avec succès.\n");
@@ -70,7 +78,7 @@ int ajouterNote(Systeme* s, const char* ptrNom_module, const char* ptrNom_branch
 
 int modifierNote(Systeme* s, const char* ptrNom_module, const char* ptrNom_branche, const char* ptrNom_note, float valeur) {
     int i;
-    uint8_t note_modifier = 0;
+    int note_modifier = 0;//
     Module* ptrm = trouverModule(s, ptrNom_module);
 
     Branch* ptrb = trouverBranche(ptrm, ptrNom_branche);
@@ -107,7 +115,7 @@ int modifierNote(Systeme* s, const char* ptrNom_module, const char* ptrNom_branc
 
 int supprimerNote(Systeme* s, const char* ptrNom_module, const char* ptrNom_branche, const char* ptrNom_note) {
     int i;
-    uint8_t note_supprimer = 0;
+    int note_supprimer = 0;//
     Module* ptrm = trouverModule(s, ptrNom_module);
     Branch* ptrb = trouverBranche(ptrm, ptrNom_branche);
 
